@@ -479,7 +479,7 @@ footer {
 
 
   .logo {
-    left: calc(50% - 10px);
+    left: calc(50% - 15px);
 
     top: 50%;
 
@@ -533,7 +533,7 @@ footer {
 
 
   .question-address {
-    width: 40%;
+    width: 20%;
   }
 
 
@@ -573,7 +573,7 @@ footer {
 
     margin: 0 auto;
 
-    transform: translateX(-10px);
+    transform: translateX(-12px);
   }
 
 }
