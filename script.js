@@ -15,7 +15,7 @@ const SUPABASE_PUBLISHABLE_KEY =
 ========================================== */
 
 const form =
-  document.getElementById("suobakForm");
+  document.getElementById("soobakForm");
 
 const submitButton =
   document.getElementById("submitButton");
