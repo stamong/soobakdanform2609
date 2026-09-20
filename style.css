@@ -1,0 +1,579 @@
+* {
+  box-sizing: border-box;
+}
+
+
+/* =========================
+   전체 페이지
+========================= */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
+}
+
+body {
+  background: #63ff63;
+  color: #000;
+
+  font-family:
+    "Courier New",
+    monospace;
+}
+
+
+/* =========================
+   메인 페이지
+========================= */
+
+.page {
+  width: min(860px, 100%);
+  margin: 0 auto;
+
+  padding:
+    65px
+    70px
+    40px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header {
+  position: relative;
+
+  width: 100%;
+  height: 125px;
+
+  margin-bottom: 70px;
+}
+
+
+/* SOOBAKDAN 로고 */
+
+.logo {
+  position: absolute;
+
+  /*
+    기존보다 살짝 왼쪽으로 이동
+  */
+  left: calc(50% - 30px);
+
+  top: 50%;
+
+  transform:
+    translate(-50%, -50%);
+
+  display: block;
+
+  width: min(455px, 68%);
+  height: auto;
+
+  object-fit: contain;
+}
+
+
+/*
+  수박 마우스 커서
+*/
+
+.watermelon {
+  position: absolute;
+
+  width: 66px;
+  height: auto;
+
+  /*
+    로고 끝쪽에 위치
+  */
+  left: calc(50% + 155px);
+
+  /*
+    아까 너무 위로 올라가서
+    조금 아래로 내림
+  */
+  top: 69px;
+
+  transform:
+    translate(-50%, -50%)
+    rotate(-8deg);
+
+  transform-origin: center;
+
+  object-fit: contain;
+
+  image-rendering: pixelated;
+
+  z-index: 5;
+}
+
+
+/* =========================
+   INPUT BOX
+========================= */
+
+.input-box {
+  position: relative;
+
+  width: 100%;
+
+  background: #ffffff;
+
+  margin-bottom: 52px;
+
+  overflow: hidden;
+}
+
+
+/* 작은 입력칸 */
+
+.box-small {
+  height: 110px;
+}
+
+
+/* 큰 입력칸 */
+
+.box-large {
+  height: 430px;
+}
+
+
+/* =========================
+   질문 이미지 공통
+========================= */
+
+.question {
+  position: absolute;
+
+  top: 15px;
+  left: 18px;
+
+  z-index: 2;
+
+  pointer-events: none;
+
+  object-fit: contain;
+  object-position: left top;
+}
+
+
+/* 이름 / 별명 */
+
+.question-name {
+  width: min(470px, 74%);
+}
+
+
+/* 주소 */
+
+.question-address {
+  width: min(135px, 42%);
+}
+
+
+/* 레시피 */
+
+.question-recipe {
+  width: min(470px, 76%);
+}
+
+
+/* =========================
+   실제 입력 영역
+========================= */
+
+textarea {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  border: none;
+  outline: none;
+
+  resize: none;
+
+  background: transparent;
+
+  color: #000;
+
+  font-family:
+    "Courier New",
+    monospace;
+
+  font-size: 17px;
+  font-weight: 700;
+
+  line-height: 1.55;
+
+  z-index: 1;
+}
+
+
+/* 이름 / 주소 입력 시작 위치 */
+
+.box-small textarea {
+  padding:
+    55px
+    20px
+    15px;
+}
+
+
+/* 레시피 입력 시작 위치 */
+
+.box-large textarea {
+  padding:
+    102px
+    20px
+    20px;
+}
+
+
+/* 클릭했을 때 */
+
+.input-box:focus-within {
+  box-shadow:
+    inset 0 0 0 2px
+    rgba(0, 0, 0, 0.45);
+}
+
+
+/* =========================
+   CLICK TO TYPE
+========================= */
+
+.click-hint {
+  position: absolute;
+
+  left: 20px;
+  bottom: 14px;
+
+  font-size: 11px;
+  font-weight: bold;
+
+  letter-spacing: 0.5px;
+
+  opacity: 0.3;
+
+  pointer-events: none;
+
+  animation:
+    blink 1.1s
+    steps(2, start)
+    infinite;
+
+  z-index: 3;
+}
+
+
+.input-box:focus-within
+.click-hint {
+  display: none;
+}
+
+
+.input-box.has-value
+.click-hint {
+  display: none;
+}
+
+
+@keyframes blink {
+
+  50% {
+    opacity: 0;
+  }
+
+}
+
+
+/* =========================
+   개인정보
+========================= */
+
+.privacy-area {
+  width: 100%;
+
+  margin-top: -8px;
+  margin-bottom: 32px;
+
+  font-size: 10px;
+
+  line-height: 1.55;
+}
+
+
+.consent {
+  display: flex;
+  align-items: center;
+
+  gap: 7px;
+
+  margin-bottom: 7px;
+
+  cursor: pointer;
+
+  font-size: 11px;
+  font-weight: 700;
+}
+
+
+.consent input {
+  width: 13px;
+  height: 13px;
+
+  accent-color: #000;
+}
+
+
+.privacy-text {
+  margin: 0;
+
+  opacity: 0.63;
+}
+
+
+/* =========================
+   SUBMIT
+========================= */
+
+.submit-button {
+  display: block;
+
+  margin:
+    10px
+    auto
+    18px;
+
+  padding:
+    10px
+    27px;
+
+  border: 3px solid #000;
+
+  background: transparent;
+
+  color: #000;
+
+  font-family:
+    "Courier New",
+    monospace;
+
+  font-size: 16px;
+  font-weight: 900;
+
+  letter-spacing: 1px;
+
+  cursor: pointer;
+
+  transition:
+    background 0.12s,
+    color 0.12s;
+}
+
+
+.submit-button:hover {
+  background: #000;
+
+  color: #63ff63;
+}
+
+
+.submit-button:disabled {
+  cursor: default;
+
+  opacity: 0.45;
+}
+
+
+/* =========================
+   제출 결과 메시지
+========================= */
+
+.status-message {
+  width: 100%;
+
+  min-height: 22px;
+
+  margin:
+    0
+    auto
+    26px;
+
+  text-align: center;
+
+  font-size: 12px;
+  font-weight: bold;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+  width: 100%;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  margin: 0 auto;
+
+  padding-top: 18px;
+
+  text-align: center;
+}
+
+
+.footer-image {
+  display: block;
+
+  width: min(240px, 80%);
+  height: auto;
+
+  margin: 0 auto;
+
+  object-fit: contain;
+
+  /*
+    이미지 파일 내부 투명 여백 보정
+    약간 왼쪽으로 이동
+  */
+  transform: translateX(-22px);
+}
+
+
+/* =========================
+   모바일
+========================= */
+
+@media (max-width: 650px) {
+
+  .page {
+    padding:
+      40px
+      22px
+      30px;
+  }
+
+
+  /* HEADER */
+
+  .header {
+    width: 100%;
+
+    height: 95px;
+
+    margin-bottom: 55px;
+  }
+
+
+  .logo {
+    left: calc(50% - 10px);
+
+    top: 50%;
+
+    width: 72%;
+
+    transform:
+      translate(-50%, -50%);
+  }
+
+
+  .watermelon {
+    width: 54px;
+
+    left: calc(50% + 27%);
+
+    top: 55px;
+
+    transform:
+      translate(-50%, -50%)
+      rotate(-8deg);
+  }
+
+
+  /* 입력칸 */
+
+  .input-box {
+    margin-bottom: 32px;
+  }
+
+
+  .box-small {
+    height: 105px;
+  }
+
+
+  .box-large {
+    height: 350px;
+  }
+
+
+  textarea {
+    font-size: 15px;
+  }
+
+
+  /* 질문 이미지 */
+
+  .question-name {
+    width: 78%;
+  }
+
+
+  .question-address {
+    width: 40%;
+  }
+
+
+  .question-recipe {
+    width: 80%;
+  }
+
+
+  /* 입력 위치 */
+
+  .box-small textarea {
+    padding-top: 54px;
+  }
+
+
+  .box-large textarea {
+    padding-top: 100px;
+  }
+
+
+  /* 개인정보 */
+
+  .privacy-area {
+    font-size: 9px;
+  }
+
+
+  .consent {
+    font-size: 10px;
+  }
+
+
+  /* FOOTER */
+
+  .footer-image {
+    width: min(220px, 56%);
+
+    margin: 0 auto;
+
+    transform: translateX(-10px);
+  }
+
+}

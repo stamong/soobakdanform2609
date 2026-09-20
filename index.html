@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>SUOBAKDAN</title>
+
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+
+  <main class="page">
+
+    <!-- HEADER -->
+    <header class="header">
+
+      <img
+        src="./assets/logo.png"
+        class="logo"
+        alt="SUOBAKDAN"
+      />
+
+      <img
+        src="./assets/watermelon.png"
+        class="watermelon"
+        alt=""
+      />
+
+    </header>
+
+
+    <!-- FORM -->
+    <form id="suobakForm">
+
+      <!-- 이름 / 별명 -->
+      <div class="input-box box-small">
+
+        <img
+          src="./assets/name-text.png"
+          class="question question-name"
+          alt="이름과 별명을 알려줘"
+        />
+
+        <textarea
+          id="name"
+          maxlength="80"
+          aria-label="이름과 별명"
+          required
+        ></textarea>
+
+        <span class="click-hint">
+          CLICK TO TYPE_
+        </span>
+
+      </div>
+
+
+      <!-- 주소 -->
+      <div class="input-box box-small">
+
+        <img
+          src="./assets/address-text.png"
+          class="question question-address"
+          alt="주소를 알려줘"
+        />
+
+        <textarea
+          id="address"
+          maxlength="300"
+          aria-label="주소"
+          required
+        ></textarea>
+
+        <span class="click-hint">
+          CLICK TO TYPE_
+        </span>
+
+      </div>
+
+
+      <!-- 레시피 -->
+      <div class="input-box box-large">
+
+        <img
+          src="./assets/recipe-text.png"
+          class="question question-recipe"
+          alt="너만의 레시피를 공유해줘"
+        />
+
+        <textarea
+          id="recipe"
+          maxlength="5000"
+          aria-label="레시피"
+          required
+        ></textarea>
+
+        <span class="click-hint">
+          CLICK TO TYPE_
+        </span>
+
+      </div>
+
+
+      <!-- 개인정보 동의 -->
+      <div class="privacy-area">
+
+        <label class="consent">
+
+          <input
+            type="checkbox"
+            id="privacyConsent"
+            required
+          />
+
+          <span>
+            개인정보 수집·이용에 동의합니다.
+          </span>
+
+        </label>
+
+        <p class="privacy-text">
+          ※ 개인정보 수집·이용 안내: 우편 발송을 위해 이름 및 주소를 수집하며,
+          수집된 개인정보는 우편 발송 완료 후 즉시 파기합니다.
+          개인정보 제공에 동의하지 않을 수 있으나,
+          미동의 시 우편 발송이 제한될 수 있습니다.
+        </p>
+
+      </div>
+
+
+      <!-- 사용자에게 보이는 유일한 기능 버튼 -->
+      <button
+        type="submit"
+        id="submitButton"
+        class="submit-button"
+      >
+        SUBMIT
+      </button>
+
+
+      <p
+        id="statusMessage"
+        class="status-message"
+      ></p>
+
+    </form>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+      <img
+        src="./assets/footer.png"
+        class="footer-image"
+        alt="2026.09 SUOBAKDAN"
+      />
+
+    </footer>
+
+  </main>
+
+
+  <script src="./script.js?v=2"></script>
+
+</body>
+</html>
